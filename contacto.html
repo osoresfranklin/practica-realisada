@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Tanta - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Previene el envío del formulario de manera predeterminada
+
+            // Aquí puedes agregar la lógica para enviar el formulario, por ejemplo, usando AJAX
+
+            // Redirigir al usuario a la página de agradecimiento
+            window.location.href = 'gracias.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Panadería Tanta</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <main>
+        <section class="contact">
+            <h2>Contacto</h2>
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Panadería Tanta. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

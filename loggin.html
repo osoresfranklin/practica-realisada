@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Panadería Tanta</title>
+    <link rel="stylesheet" href="css/loggin.css"> <!-- Vincula tu archivo de estilos CSS -->
+</head>
+<body>
+    <div class="login-container">
+        <img src="img/panaderia-tanta-preview.png" alt="Logo Panadería Tanta">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Usuario" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="message" id="message"></div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario para validación
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            
+            if (username === 'panaderia' && password === 'tanta') {
+                message.textContent = '¡Inicio de sesión exitoso!';
+                message.style.color = 'green';
+                setTimeout(function() {
+                    window.location.href = 'index.html'; // Redirige al usuario a la página de inicio
+                }, 1000); // Espera 1 segundo antes de redirigir
+            } else {
+                message.textContent = 'Usuario o contraseña incorrectos.';
+                message.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
